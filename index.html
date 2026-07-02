@@ -1,236 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Little John</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" type="image/png" href="asset/logo.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="ambient-glow" aria-hidden="true"></div>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>$JOHN — Little John | Robin Hood Meme Coin</title>
+<meta name="description" content="Little John — the outlaw of crypto. Steal from the whales, give the gains to the people. $JOHN on Robinhood." />
+<link rel="icon" type="image/png" href="asset/logo.png" />
 
-    <nav class="navbar" id="navbar">
-      <div class="nav-inner">
-        <a href="#" class="nav-brand">
-          <img src="asset/logo.png" alt="Little John" class="nav-logo" />
-          <span class="nav-title">Little John</span>
+<meta property="og:title" content="$JOHN — Little John" />
+<meta property="og:description" content="The legendary archer of Sherwood Forest rides the Robinhood blockchain." />
+<meta property="og:image" content="asset/banner.png" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Russo+One&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Forest atmosphere -->
+<div class="forest-stage" aria-hidden="true">
+  <div class="forest-sky"></div>
+  <div class="forest-mist forest-mist--1"></div>
+  <div class="forest-mist forest-mist--2"></div>
+  <div class="moon"></div>
+  <div class="forest-canopy"></div>
+  <canvas id="leaf-canvas"></canvas>
+</div>
+
+<div class="floaters" aria-hidden="true"></div>
+
+<!-- Decorative corner vines -->
+<div class="vine vine--tl" aria-hidden="true"></div>
+<div class="vine vine--tr" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a href="#hero" class="nav__brand">
+    <img src="asset/logo.png" alt="Little John" class="nav__logo" />
+    <span class="nav__name">Little John</span>
+  </a>
+  <nav class="nav__links">
+    <a href="#about">About</a>
+    <a href="#howtobuy">How To Buy</a>
+    <a href="#chart">Chart</a>
+    <a href="#joinus">Join Us</a>
+  </nav>
+  <a href="https://app.uniswap.org/swap?inputCurrency=eth&outputCurrency=$0xcomingsoon&chain=robinhood" target="_blank" rel="noopener noreferrer" class="btn btn--gold nav__cta">BUY $JOHN</a>
+  <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>🏹 STEAL FROM WHALES</span><span>◆</span>
+    <span>GIVE GAINS TO THE PEOPLE</span><span>◆</span>
+    <span>$JOHN ON ROBINHOOD</span><span>◆</span>
+    <span>FOREST ENERGY</span><span>◆</span>
+    <span>AIM · FIRE · MOON</span><span>◆</span>
+    <span>🏹 STEAL FROM WHALES</span><span>◆</span>
+    <span>GIVE GAINS TO THE PEOPLE</span><span>◆</span>
+    <span>$JOHN ON ROBINHOOD</span><span>◆</span>
+    <span>FOREST ENERGY</span><span>◆</span>
+    <span>AIM · FIRE · MOON</span><span>◆</span>
+  </div>
+</div>
+
+<section class="hero" id="hero">
+  <div class="hero__inner">
+    <div class="hero__copy reveal">
+      <div class="kicker">
+        <svg class="kicker__arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M2 12l20-8-8 20-2-8-8-4z"/></svg>
+        ROBINHOOD CHAIN
+      </div>
+      <h1 class="hero__title">
+        <span class="title-line title-line--main">Little John</span>
+      </h1>
+      <p class="hero__sub">
+        In the Deep in Sherwood Forest, pole-wielding Little John fights against a pod of whales. Return the memes to the people.
+      </p>
+      <div class="hero__actions">
+        <a href="https://app.uniswap.org/swap?inputCurrency=eth&outputCurrency=$0xcomingsoon&chain=robinhood" target="_blank" rel="noopener noreferrer" class="btn btn--gold btn--lg pulse">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M2 12l20-8-8 20-2-8-8-4z"/></svg>
+          BUY ON UNISWAP
         </a>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#tokenomics">Tokenomics</a>
-          <a href="#community">Community</a>
-          <a href="#chart">Chart</a>
-        </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-        </button>
+        <a href="#about" class="btn btn--ghost btn--lg">Read the Legend</a>
       </div>
-    </nav>
+      <div class="hero__badges">
+        <span class="chip"><span class="chip__icon">🏹</span> $JOHN</span>
+        <span class="chip"><span class="chip__icon">🔒</span> LP BURNED</span>
+        <span class="chip"><span class="chip__icon">⚔️</span> RENOUNCED</span>
+      </div>
+    </div>
 
-    <main>
-      <section class="hero">
-        <div class="hero-banner">
-          <img src="asset/banner.png" alt="Little John Banner" class="banner-img" />
-          <div class="hero-overlay"></div>
+    <div class="hero__art reveal">
+      <div class="hero__frame tilt" data-tilt>
+        <div class="hero__glow"></div>
+        <div class="hero__border">
+          <img src="asset/banner.png" alt="Little John — Robin Hood outlaw" class="hero__img" />
         </div>
-        <div class="hero-content">
-          <h1 class="hero-title">Little John</h1>
-          <p class="hero-subtitle">
-            The legendary archer of the forest — where meme culture meets
-            medieval lore on the blockchain.
-          </p>
-          <div class="hero-actions">
-            <a href="#community" class="btn btn-primary">Join Community</a>
-            <a href="#chart" class="btn btn-secondary">View Chart</a>
-          </div>
+        <div class="hero__seal">
+          <span class="seal__text">OUTLAW</span>
+          <span class="seal__sub">EST. 2026</span>
         </div>
-      </section>
+        <div class="burst burst--left">THWACK!</div>
+        <div class="burst burst--right">BULLSEYE!</div>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll down">
+    <span class="scroll-cue__arrow">↓</span>
+    <span class="scroll-cue__label">Enter the Forest</span>
+  </a>
+</section>
 
-      <section class="section" id="about">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">The Legend</span>
-          <h2 class="section-title">About Little John</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-card reveal">
-            <p class="about-text">
-              <strong>$JOHN</strong> is a community-driven meme token
-              inspired by the iconic Wojak and the timeless legend of Robin
-              Hood. Born from internet culture and forest folklore, it captures
-              the spirit of the underdog — calm, determined, and always aiming
-              true.
-            </p>
-          </div>
-          <div class="about-card reveal">
-            <p class="about-text">
-              Created by <strong>@WhiteHouse</strong> on X, Little John unites
-              degens and dreamers under one green banner. No hype, no noise —
-              just a steady hand on the bow and a community that believes in
-              the journey.
-            </p>
-          </div>
-        </div>
-      </section>
+<section class="stats">
+  <div class="stat-card reveal">
+    <div class="stat__icon">🌙</div>
+    <div class="stat__num" data-count="2026">0</div>
+    <div class="stat__label">Outlaw Year</div>
+  </div>
+  <div class="stat-card reveal">
+    <div class="stat__icon">💰</div>
+    <div class="stat__num" data-count="1000000000">0</div>
+    <div class="stat__label">Total Supply</div>
+  </div>
+  <div class="stat-card reveal">
+    <div class="stat__icon">⚖️</div>
+    <div class="stat__num" data-count="0">0</div>
+    <div class="stat__label">Buy / Sell Tax %</div>
+  </div>
+  <div class="stat-card reveal">
+    <div class="stat__icon">🤝</div>
+    <div class="stat__num" data-count="100">0</div>
+    <div class="stat__label">% Community</div>
+  </div>
+</section>
 
-      <section class="section" id="tokenomics">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">Economics</span>
-          <h2 class="section-title">Tokenomics</h2>
-        </div>
-
-        <div class="tokenomics-metrics">
-          <div class="token-metric reveal">
-            <span class="token-metric-label">Total Supply</span>
-            <span class="token-metric-value">1,000,000,000</span>
-            <span class="token-metric-note">$JOHN</span>
-          </div>
-          <div class="token-metric reveal">
-            <span class="token-metric-label">Buy / Sell Tax</span>
-            <span class="token-metric-value">0% / 0%</span>
-            <span class="token-metric-note">No hidden fees</span>
-          </div>
-          <div class="token-metric reveal">
-            <span class="token-metric-label">Liquidity</span>
-            <span class="token-metric-value">Burned</span>
-            <span class="token-metric-note">LP permanently removed</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="community">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">Connect</span>
-          <h2 class="section-title">Join the Community</h2>
-        </div>
-        <div class="social-grid">
-          <a
-            href="https://t.me/littlejohnrobin"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-card reveal"
-            aria-label="Telegram"
-          >
-            <div class="social-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.14.121.099.155.232.171.326.016.094.036.308.02.475z"
-                />
-              </svg>
-            </div>
-            <div class="social-info">
-              <span class="social-name">Telegram</span>
-              <span class="social-desc">Chat with the community</span>
-            </div>
-            <svg class="social-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a
-            href="https://x.com/johnrobinhood_x"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-card reveal"
-            aria-label="X (Twitter)"
-          >
-            <div class="social-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                />
-              </svg>
-            </div>
-            <div class="social-info">
-              <span class="social-name">X</span>
-              <span class="social-desc">Follow for updates</span>
-            </div>
-            <svg class="social-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a
-            href="https://dexscreener.com/robinhood/0xcomingsoon"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-card reveal"
-            aria-label="DexScreener"
-          >
-            <div class="social-icon dex-icon-wrap">
-              <img src="dexscreener.webp" alt="" class="dex-icon" />
-            </div>
-            <div class="social-info">
-              <span class="social-name">DexScreener</span>
-              <span class="social-desc">Live price & analytics</span>
-            </div>
-            <svg class="social-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-      </section>
-
-      <section class="section ca-section">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">Token</span>
-          <h2 class="section-title">Contract Address</h2>
-        </div>
-        <div class="ca-card reveal">
-          <div class="ca-input-wrap">
-            <input
-              type="text"
-              id="caInput"
-              value="0xF5666b3e5a136bB35e6652B49bc30bbC858bacAE"
-              readonly
-              class="ca-input"
-              aria-label="Contract address"
-            />
-            <button id="copyBtn" class="copy-btn" type="button">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              <span id="copyText">Copy</span>
-            </button>
-          </div>
-          <p class="ca-hint">Always verify the contract address before trading.</p>
-        </div>
-      </section>
-
-      <section class="section chart-section" id="chart">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">Markets</span>
-          <h2 class="section-title">Live Chart</h2>
-        </div>
-        <div class="chart-card reveal">
-          <iframe
-            src="https://dexscreener.com/robinhood/0xcomingsoon?embed=1&theme=dark&trades=0&info=0"
-            class="dex-iframe"
-            title="DEXScreener Chart"
-          ></iframe>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="asset/logo.png" alt="Little John" class="footer-logo" />
-          <span>Little John</span>
-        </div>
-        <p class="footer-copy">&copy; 2026 Little John. All rights reserved.</p>
-        <p class="footer-disclaimer">
-          This is a meme token. Not financial advice. DYOR.
+<section class="section about" id="about">
+  <div class="section__head reveal">
+    <span class="eyebrow">◆ The Outlaw's Tale ◆</span>
+    <h2 class="section__title">About of $JOHN</h2>
+    <div class="section__divider"></div>
+  </div>
+  <div class="about__grid">
+    <div class="about__lead reveal">
+      <div class="parchment tilt" data-tilt>
+        <div class="parchment__corner parchment__corner--tl"></div>
+        <div class="parchment__corner parchment__corner--br"></div>
+        <h3>Steal the charts.<br>Give gains to the people.</h3>
+        <p>
+          In the Deep in a forest ruled by market makers and whales, Little John stood against them all.
+          His name was <strong>Little John</strong> — Robin Hood's most loyal companion, now reborn on the blockchain.
         </p>
+        <p>
+          His weapon wasn't gold. It was <strong>memes</strong>.<br><br>
+          Now he rides the Robinhood chain, firing every arrow toward the next viral run.
+          Little John isn't here to follow the market.<br>
+          <em>He's here to hunt it.</em>
+        </p>
+        <div class="about__cta">
+          <a href="https://app.uniswap.org/swap?inputCurrency=eth&outputCurrency=$0xcomingsoon&chain=robinhood" target="_blank" rel="noopener noreferrer" class="btn btn--gold">JOIN THE OUTLAWS</a>
+        </div>
       </div>
-    </footer>
+    </div>
+    <div class="about__cards">
+      <div class="feat reveal tilt" data-tilt>
+        <div class="feat__icon">🏹</div>
+        <h4>Aim True</h4>
+        <p>Every arrow fired straight at whale wallets and chart manipulation.</p>
+      </div>
+      <div class="feat reveal tilt" data-tilt>
+        <div class="feat__icon">🔥</div>
+        <h4>LP Burned</h4>
+        <p>Liquidity locked forever — no rug pulls in this forest.</p>
+      </div>
+      <div class="feat reveal tilt" data-tilt>
+        <div class="feat__icon">🪙</div>
+        <h4>0% Tax</h4>
+        <p>Zero buy and sell tax. Pure outlaw energy, no hidden fees.</p>
+      </div>
+      <div class="feat reveal tilt" data-tilt>
+        <div class="feat__icon">🌲</div>
+        <h4>The Merry Men</h4>
+        <p>Outlaws united on Robinhood — one forest, one shot, one $JOHN.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
-  </body>
+<section class="section howto" id="howtobuy">
+  <div class="section__head reveal">
+    <span class="eyebrow">◆ The Raid Plan ◆</span>
+    <h2 class="section__title">How To Buy</h2>
+    <div class="section__divider"></div>
+  </div>
+  <div class="howto__path">
+    <div class="path-line" aria-hidden="true"></div>
+    <div class="step reveal tilt" data-tilt>
+      <div class="step__shield">I</div>
+      <h4>Get a Wallet</h4>
+      <p>Download <strong>Rabby</strong> and set up your Robinhood wallet.</p>
+    </div>
+    <div class="step reveal tilt" data-tilt>
+      <div class="step__shield">II</div>
+      <h4>Load Up ETH</h4>
+      <p>Buy <strong>ETH</strong> from any exchange and send it to your wallet.</p>
+    </div>
+    <div class="step reveal tilt" data-tilt>
+      <div class="step__shield">III</div>
+      <h4>Swap on Uniswap</h4>
+      <p>Connect to <strong>Uniswap</strong>, paste the $JOHN address, and swap your ETH.</p>
+    </div>
+    <div class="step reveal tilt" data-tilt>
+      <div class="step__shield">IV</div>
+      <h4>Join the Outlaws</h4>
+      <p>Hold tight, join the Merry Men, and ride the Robin Hood wave. 🏹</p>
+    </div>
+  </div>
+
+  <div class="ca reveal">
+    <span class="ca__label">◆ Contract Address ◆</span>
+    <code id="ca-text">$0xcomingsoon</code>
+    <button class="btn btn--gold ca__copy" id="ca-copy">COPY</button>
+  </div>
+  <div class="howto__cta reveal">
+    <a href="https://app.uniswap.org/swap?inputCurrency=eth&outputCurrency=$0xcomingsoon&chain=robinhood" target="_blank" rel="noopener noreferrer" class="btn btn--gold btn--lg pulse">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M2 12l20-8-8 20-2-8-8-4z"/></svg>
+      BUY ON UNISWAP
+    </a>
+  </div>
+</section>
+
+<section class="section chart" id="chart">
+  <div class="section__head reveal">
+    <span class="eyebrow">◆ Live Bounty Board ◆</span>
+    <h2 class="section__title">The Chart</h2>
+    <div class="section__divider"></div>
+  </div>
+  <div class="chart__frame reveal tilt" data-tilt data-tilt-max="4">
+    <div class="chart__header">
+      <span class="chart__dot"></span>
+      LIVE · DEXSCREENER · ROBINHOOD
+    </div>
+    <iframe
+      id="dex-embed"
+      title="DexScreener $JOHN Chart"
+      src="https://dexscreener.com/robinhood/0xcomingsoon?embed=1&theme=dark&trades=0&info=0"
+      loading="lazy"
+      allow="clipboard-write">
+    </iframe>
+    <a class="chart__fallback" href="https://dexscreener.com/robinhood/0xcomingsoon" target="_blank" rel="noopener noreferrer">Open full chart on DexScreener ↗</a>
+  </div>
+  <p class="chart__note reveal">Live price action on DexScreener · Robinhood. 🏹</p>
+</section>
+
+<section class="section joinus" id="joinus">
+  <div class="section__head reveal">
+    <span class="eyebrow">◆ Gather the Merry Men ◆</span>
+    <h2 class="section__title">Join the Outlaws</h2>
+    <div class="section__divider"></div>
+  </div>
+
+  <div class="joinus__banner reveal tilt" data-tilt data-tilt-max="5">
+    <div class="joinus__frame">
+      <img src="asset/banner.png" alt="$JOHN — Little John banner" class="joinus__img" />
+      <div class="joinus__overlay"></div>
+    </div>
+  </div>
+
+  <p class="joinus__copy reveal">
+    The forest is alive. The outlaws are gathering. Draw your bow and ride with us.
+  </p>
+
+  <div class="joinus__links reveal">
+    <a href="https://x.com/johnrobinhood_x" target="_blank" rel="noopener noreferrer" class="social tilt" data-tilt>
+      <span class="social__icon">𝕏</span>
+      <span class="social__txt"><strong>Twitter / X</strong><small>@johnrobinhood_x</small></span>
+    </a>
+    <a href="https://t.me/littlejohnrobin" target="_blank" rel="noopener noreferrer" class="social tilt" data-tilt>
+      <span class="social__icon">✈️</span>
+      <span class="social__txt"><strong>Telegram</strong><small>t.me/littlejohnrobin</small></span>
+    </a>
+    <a href="https://dexscreener.com/robinhood/0xcomingsoon" target="_blank" rel="noopener noreferrer" class="social social--gold tilt" data-tilt>
+      <span class="social__icon"><img src="dexscreener.webp" alt="" class="dex-icon" /></span>
+      <span class="social__txt"><strong>DexScreener</strong><small>Live price &amp; analytics</small></span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__crest">
+    <img src="asset/logo.png" alt="Little John" class="footer__logo" />
+    <div class="footer__name">$JOHN</div>
+  </div>
+  <p class="footer__disclaimer">
+    $JOHN is a meme coin with no intrinsic value or expectation of financial return.
+    Not affiliated with Robin Hood. For entertainment purposes only. DYOR.
+  </p>
+  <p class="footer__copy">© 2026 $JOHN · Built for outlaws on Robinhood</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
